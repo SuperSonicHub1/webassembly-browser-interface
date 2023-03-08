@@ -1,0 +1,22 @@
+default interface url-search-params {
+	/// A URLSearchParams object.
+	///
+	/// This [represents a resource](https://github.com/WebAssembly/WASI/blob/main/docs/WitInWasi.md#Resources).
+	type url-search-params-handle = u32
+
+	/// Dispose of the specified `url-search-params-handle`, after which it may no longer
+	/// be used.
+	drop-url-search-params: func(this: url-search-params-handle)
+
+	url-search-params-new: func(init: option<string>) -> url-search-params-handle
+	url-search-params-get-size: func(handle: url-search-params-handle) -> u32
+	url-search-params-append: func(handle: url-search-params-handle, name: string, value: string) -> ()
+	url-search-params-delete: func(handle: url-search-params-handle, name: string) -> ()
+	url-search-params-get: func(handle: url-search-params-handle, name: string) -> option<string>
+	url-search-params-getAll: func(handle: url-search-params-handle, name: string) -> string
+	url-search-params-has: func(handle: url-search-params-handle, name: string) -> bool
+	url-search-params-set: func(handle: url-search-params-handle, name: string, value: string) -> ()
+	url-search-params-sort: func(handle: url-search-params-handle, ) -> ()
+	url-search-params-to-string: func(handle: url-search-params-handle) -> string
+
+}

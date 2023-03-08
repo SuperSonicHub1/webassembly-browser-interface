@@ -1,0 +1,21 @@
+{
+  "name": "webassembly-browser-interface",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "vite-node webidl2wit.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^18.14.6",
+    "@types/webidl2": "^23.13.6",
+    "vite-node": "^0.29.2"
+  },
+  "dependencies": {
+    "change-case": "^4.1.2",
+    "webidl2": "^24.2.2"
+  }
+}
